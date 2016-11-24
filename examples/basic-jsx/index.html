@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic Example with JSX</title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+  </head>
+  <body>
+  <div id="q"></div>
+    <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+    <script type="text/babel">
+
+
+    var Q =React.createClass({
+      let styles={
+        class1:{color  rd },
+        class2:{},
+        class3:{},
+        class4:{},
+      }
+      getInitialState:function(){
+          return {
+            num : 0,
+            n : true
+          }
+      },
+      hc1:function(){
+        this.setState({
+          num:this.state.num+1
+        })
+      },
+      hc2:function(){
+        this.setState({
+          num:this.state.num-1
+        })
+      },
+      qk:function(){
+        this.setState({
+          num:0
+        })
+      },
+      pf:function(){
+        this.setState({
+          num:this.state.num*this.state.num
+        })
+      },
+      sf:function(){
+        this.setState({
+          n:!this.state.n
+        })
+      },
+      render:function(){
+        var like = this.state.n ? 'y' : 'n'
+        return (
+
+          <div>
+            <p>11{like}</p>
+            <p>{this.state.num}</p>
+            <button onClick={this.hc1}>+1</button>
+            <button onClick={this.hc2}>-1</button>
+            <button onClick={this.qk}>C</button>
+            <button onClick={this.pf}>x*x</button>
+            <button onClick={this.sf}>y or n</button>
+
+          </div>
+
+        )
+      }
+    })
+
+
+
+
+
+
+
+      ReactDOM.render(
+      <div>
+        <Q />
+      </div>
+      ,
+        document.getElementById('q')
+      )
+
+    </script>
+  </body>
+</html>
